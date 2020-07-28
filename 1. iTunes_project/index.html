@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/52187d2d32.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <div class="switch-btn-wrp">
+        <button class="player-btn player-video">Video</button>
+        <button class="player-btn player-music">Music</button>
+        <button class="player-btn player-radio">Radio</button>
+    </div>
+
+    <div class="player-block-wrp">
+        <div class="player-block video">
+            <h1>Video block</h1>
+            <div class="container">
+                <div class="video-container">
+                    <video src="http://techslides.com/demos/sample-videos/small.mp4" class="video-player"></video>
+                    <nav class="video-navigation">
+                        <button class="video-button video-button__play fa fa-play"></button>
+                        <button class="video-button video-button__stop fa fa-stop"></button>
+                        <p class="video-time video-time__passed">00:00</p>
+                        <input type="range" class="video-progress" min="0" max="100" value="0">
+                        <p class="video-time video-time__total">00:00</p>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="player-block music">
+            <h1>Music block</h1>
+        </div>
+        <div class="player-block radio">
+            <h1>Radio block</h1>
+        </div>
+    </div>
+
+    <script src="./scripts/index.js" type="module"></script>
+</body>
+</html>
