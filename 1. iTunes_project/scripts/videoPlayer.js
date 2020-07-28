@@ -5,6 +5,8 @@ export const videoPlayerInit = (someWord) => {
     const videoTimePassed = document.querySelector(".video-time__passed");
     const videoProgress = document.querySelector(".video-progress");
     const videoTimeTotal = document.querySelector(".video-time__total");
+    const videoVolume = document.querySelector(".video-volume");
+    const videoVolumeIcon = document.querySelector(".video-volume-icon");
 
     const toggleIcon = () => {
         if(videoPlayer.paused) {
@@ -40,6 +42,28 @@ export const videoPlayerInit = (someWord) => {
     videoPlayer.addEventListener('pause', toggleIcon);
 
     videoButtonStop.addEventListener('click', stopPlay);
+
+    videoPlayer.addEventListener('volumechange', () => {
+        let videoVolumePercent = videoPlayer.volume * 100;
+        console.log(videoVolumePercent);
+        if(videoVolumePercent == 0) {
+            videoVolumeIcon.classList.add("fa-volume-off");
+            videoVolumeIcon.classList.remove("fa-volume-down");
+            videoVolumeIcon.classList.remove("fa-volume-up");
+        } else if (videoVolumePercent >= 50) {
+            videoVolumeIcon.classList.remove("fa-volume-off");
+            videoVolumeIcon.classList.remove("fa-volume-down");
+            videoVolumeIcon.classList.add("fa-volume-up");
+        } else if (videoVolumePercent > 0) {
+            videoVolumeIcon.classList.remove("fa-volume-off");
+            videoVolumeIcon.classList.add("fa-volume-down");
+            videoVolumeIcon.classList.remove("fa-volume-up");
+        } 
+    });
+
+    videoVolume.addEventListener('change', () => {
+        videoPlayer.volume = videoVolume.value / 100;
+    });
 
     videoPlayer.addEventListener('timeupdate', () => {
         const currentTime = videoPlayer.currentTime;

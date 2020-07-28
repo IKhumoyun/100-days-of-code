@@ -23,11 +23,21 @@
                 <div class="video-container">
                     <video src="http://techslides.com/demos/sample-videos/small.mp4" class="video-player"></video>
                     <nav class="video-navigation">
-                        <button class="video-button video-button__play fa fa-play"></button>
-                        <button class="video-button video-button__stop fa fa-stop"></button>
-                        <p class="video-time video-time__passed">00:00</p>
-                        <input type="range" class="video-progress" min="0" max="100" value="0">
-                        <p class="video-time video-time__total">00:00</p>
+                        <div class="video-progress-wrapper">
+                            <p class="video-time video-time__passed">00:00</p>
+                            <input type="range" class="video-progress" min="0" max="100" value="0">
+                            <p class="video-time video-time__total">00:00</p>
+                        </div>
+                        <div class="video-controls">
+                            <div>
+                                <button class="video-button video-button__play fa fa-play"></button>
+                                <button class="video-button video-button__stop fa fa-stop"></button>
+                            </div>
+                            <div class="video-volume-wrapper">
+                                <i class="video-volume-icon fas fa-volume-up"></i>
+                                <input class="video-volume" type="range" min="0" max="100" value="100">
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </div>

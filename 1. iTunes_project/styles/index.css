@@ -6,6 +6,10 @@ body {
     color: #ffffff;
 }
 
+p {
+    margin: 0;
+}
+
 .player-btn {
     background-color: rgb(62, 123, 255);
     border: 2px solid transparent;
@@ -30,12 +34,20 @@ body {
 }
 
 .video-navigation {
-    display: flex;
-    justify-content: flex-start;
-    max-height: 30px;
-    align-items: center;
     background-color: #000000;
     padding: 5px;
+}
+
+.video-navigation .video-progress-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.video-navigation .video-controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .video-progress {
